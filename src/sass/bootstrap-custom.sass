@@ -1,0 +1,109 @@
+html
+  height: 100%
+  font-size: 16px
+  body
+    font-family: "Gotham Rounded SSm A", "Gotham Rounded SSm B", sans-serif
+    padding: 0
+    border: 0
+    height: 100%
+    width: 100%
+    color: $paragraph-color
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    @media (min-width: 75em) and (max-width: 99.9375em)
+      font-size: 105%
+    @media (min-width: 100em)
+      font-size: 115%
+    hr
+      border-top: 1px solid $border-color
+      margin: 2em 0
+    label
+      font-weight: 500
+      &.disabled
+        color: $medium-gray
+      &.required::after
+        vertical-align: top
+        content: "*"
+    .container
+      @media (min-width: 992px)
+        width: 90%
+        max-width: 1600px
+    input.form-control,
+    textarea.form-control
+      border-radius: $border-radius-base
+      border: 1px solid $border-color
+      padding: 6px 8px
+      height: auto
+      @media (max-width : 1199px)
+        padding: 6px
+    input::placeholder
+      color: $placeholder-color
+      font-style: italic
+      font-size: 0.9em
+      @media (min-width: 1200px)
+        font-size: 1em
+    .btn
+      border-radius: $border-radius-base
+      &.disabled
+        color: $medium-gray
+    .input-group
+      .btn
+        font-size: 14px
+    a,
+      text-decoration: none
+      color: $link-color
+      &:visited, &.visited,
+      &:active, &.active,
+      &:hover, &.hover,
+      &:focus, &.focus,
+      &.active.focus,
+      &.active:focus,
+      &:active.focus,
+      &:active:focus
+        color: $link-color
+        outline: 0
+    [data-whatinput=mouse] button
+      outline: 0
+    .alert
+      border-radius: $border-radius-base
+    .modal-dialog.modal-full
+      width: 100%
+      height: 100%
+      margin: 0
+      padding: 0
+      .modal-content
+        height: auto
+        min-height: 100%
+        border-radius: $border-radius-base
+    .help-block
+      font-size: 0.8em
+      font-weight: 500
+    ul.dropdown-menu
+      border-radius: 0
+      margin: 0
+  div.dropdown-select
+    div.dropdown
+      margin-top: -2px
+      height: 30px
+      button.dropdown-toggle
+        background-color: $background-color
+        width: 100%
+        font-size: 1em
+        padding: 6px 12px
+        border: $light-gray solid 1px
+        border-radius: 0
+        text-align: left
+        margin-bottom: 1.5em
+        span.abbr
+          @media(max-width:991px)
+            display: none
+        span.no-abbr
+          @media(min-width:992px)
+            display: none
+        span.caret
+          margin-left: .5em
+      div.dropdown-menu
+        a
+          display: block
+          padding: .5em 1em
+          color: $dark-gray

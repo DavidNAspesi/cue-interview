@@ -1,0 +1,68 @@
+@import mixins
+
+div.solution-list-item-wrap
+  div.solution-row
+    margin-left: 0
+    margin-right: 0
+  i
+    padding: 0 .5em .5em 0
+    &.fa-exclamation-circle
+      margin-left: 1em
+      color: $paragraph-color
+    &.fa-caret-up
+      color: $dark-gray
+  div.solution-list-item
+    a
+      cursor: pointer
+      opacity: 1
+      transition: opacity .25s ease
+      &:hover
+        text-decoration: none
+        opacity: .5
+      &.remove
+        font-weight: 600
+        color: $red
+        display: block
+      &.team
+        font-weight: 600
+        color: $green
+    div.data-col
+      +flex-row
+      justify-content: flex-start
+      div.solution-data
+        margin-left: 1em
+      div.solution-name
+        font-size: 1.3em
+        font-weight: 600
+      div.plan-info
+        font-weight: 500
+        font-size: .8em
+        margin-bottom: 1em
+      div.trial-left
+        font-weight: 500
+        margin-bottom: 0.25em
+    div.plan-selection-col
+      +flex-col
+      align-items: flex-end
+      @media (max-width: 767px)
+        align-items: center
+        margin-top: 1em
+      div.dropdown
+        margin-bottom: 1em
+        button.btn-dropdown
+          background-color: $light-gray
+      div.disabled
+        color: $medium-gray
+        cursor: not-allowed
+  div.setup
+    hr
+      margin: 1em 0
+    span.domain-name
+      font-size: 0.85em
+      text-transform: none
+      margin-left: 0.5em
+      margin-bottom: 1em
+    a.setup-action
+      padding-left: 0 !important
+      padding-right: 2em
+      text-decoration: none

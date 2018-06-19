@@ -1,0 +1,37 @@
+@import mixins
+
+div.contact-tile-wrap
+  text-align: center
+  margin-top: 1em
+  h3
+    margin-top: 0
+    color: $cue-primary
+    font-weight: 400
+  small
+    display: block
+  div.link-row
+    +flex-row
+    justify-content: center
+    flex-wrap: wrap
+    margin-top: 1em
+  a
+    width: 70px
+    height: 70px !important
+    // background-color: $lightest-gray
+    color: $cue-primary
+    margin: 1em
+    +flex-col
+    font-size: .75em
+    &:hover
+      text-decoration: none
+    i
+      font-size: 2em
+      border-radius: 50%
+      border: $cue-primary solid 1px
+      padding: .7em
+      transition: box-shadow .2s ease
+      margin-bottom: .25em
+      &:hover
+        text-decoration: none
+        cursor: pointer
+        box-shadow: $light-shadow

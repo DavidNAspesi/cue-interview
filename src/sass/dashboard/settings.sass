@@ -1,0 +1,50 @@
+@import mixins
+
+div.settings-wrap
+  div.input-field
+    +flex-col
+    justify-content: flex-start
+    align-items: baseline
+    margin: .5em
+    height: 60px
+    @media (max-width: 768px)
+      height: 60px
+    span
+      width: 100%
+      margin-top: 0
+    input
+      width: 100%
+      border: none
+      border-bottom: 2px $light-gray solid
+      color: $dark-gray
+      transition: border-bottom .25s ease, color .25s ease
+      box-shadow: none
+      &:focus
+        border-bottom: 2px $cue-primary solid
+        color: $cue-primary
+    &:hover
+      cursor: pointer
+      input
+        border-bottom: 2px lighten($cue-primary, 20) solid
+        color: $cue-primary
+      &.static
+        cursor: default
+    i
+      margin-right: 1em
+    div.help-block
+      height: 15px
+  div.form-group.dropdown-select
+    button
+      margin: 0 10px
+      width: 95% !important
+  div.side-by-side
+    +flex-row
+    @media (max-width: 768px)
+      flex-flow: column-reverse
+  button
+    margin-top: 1em
+  hr
+    border-top: $cue-primary 2px solid
+  div.profile-wrap
+    form.profile
+      padding-bottom: 3em

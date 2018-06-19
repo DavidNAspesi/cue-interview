@@ -1,0 +1,67 @@
+@import mixins
+
+div.dashboard-wrap div.dashboard-main div.billing-wrap
+  hr
+    width: 100%
+    margin: 1em 0
+    border-top: 1px solid $light-gray
+  div.one-bill-wrap
+    +flex-col
+    align-items: center
+    text-align: center
+    img
+      height: 120px
+      width: auto
+      margin: 1em
+    small
+      @media (max-width: 768px)
+        width: 75%
+  div.transaction-listing-wrap
+    div.transaction-list-item
+      padding: 1em 0
+      border-top: 1px solid $light-gray
+      &.table-header
+        border-top: none
+        padding: 0 0 .5em 0
+        font-weight: 500
+    div.transaction-header
+      font-weight: 500
+    a
+      div.transaction-row
+        font-size: 0.95em
+        i.fa-caret-right
+          display: none
+        i.fa-caret-down
+          display: inline
+      &.collapsed
+        div.transaction-row
+          i.fa-caret-right
+            display: inline
+          i.fa-caret-down
+            display: none
+  div.payment-info-wrap
+    div.card-info
+      margin-bottom: 2em
+    div.billing-text
+      color: $dark-gray
+      font-weight: 500
+      margin-top: 3em
+      padding-right: 1em
+    div.update-payment-wrapper
+      padding: 0 1em
+      color: $dark-gray
+      .exp-padding
+        padding-right: 6px
+      .cvc-padding
+        padding-left: 6px
+        padding-right: 6px
+      .cvc-img-padding
+        padding-left: 6px
+        img
+          width: 100%
+    div.billing-info, div.card-info
+      a
+        text-decoration: underline
+  @media (min-width: 768px)
+    div.dashboard-pane.second-row
+      margin-bottom: 0

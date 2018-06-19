@@ -1,0 +1,192 @@
+@import mixins
+
+div.header
+  position: relative
+  height: $header-height
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .2)
+  background-color: $white
+  z-index: 4
+  &.sticky
+    position: fixed
+    width: 100%
+    z-index: 12
+    top: 0
+  @media (max-width: 767px)
+    position: relative
+    height: $header-height-mobile
+    border-top: 5px solid $cue-primary
+  div.support-header-row
+    background: linear-gradient(to left, $cue-primary-dark, $cue-primary, $cue-primary-lite)
+    div.support-header-inner
+      font-size: 14px
+      font-weight: 500
+      line-height: 1
+      padding: 10px 16px
+      display: flex
+      justify-content: flex-end
+      &.in-shop
+        padding: 10px 0
+        +width-limit
+      @media (max-width: 767px)
+        display: none
+      div.header-link
+        border-right: 1px solid $white
+        padding: 0 1.5em
+        &:last-child
+          border-right: 0
+          padding-right: 0
+        a,a:visited,a:focus
+          color: $white
+          text-decoration: none
+  div.logo-header-row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 16px
+    min-height: 75px
+    @media (max-width: 767px)
+      min-height: 60px
+    &.in-shop
+      padding: 0
+      +width-limit
+    div.logo-col
+      img
+        height: 35px
+        @media (max-width: 767px)
+          height: 30px
+    div.search-col
+      max-width: 33%
+      @media (max-width: 1299px)
+        max-width: 26%
+      form#search-header
+        @media (max-width: 1149px)
+          display: none
+        div.input-group
+          input
+            background-color: rgba(0, 0, 0, 0)
+            border: 1px solid $cue-primary
+            box-shadow: none
+            padding: 8px 18px
+            font-size: 14px
+            line-height: 14px
+            color: $cue-primary
+            height: 30px
+            @media (max-width: 1300px)
+              padding: 8px 12px
+            &::placeholder
+              color: $medium-gray
+              font-style: normal
+              font-size: 14px
+          .btn-search
+            background-color: $cue-primary
+            border-color: $cue-primary
+            color: $white
+            height: 30px
+            border: none
+            .glyphicon
+              padding: 0
+    div.links-col
+      display: flex
+      flex-flow: row
+      justify-content: flex-end
+      flex-wrap: nowrap
+      align-items: center
+      a
+        color: $cue-primary
+        font-size: 16px
+        font-weight: 500
+        margin-right: 30px
+        padding-top: 29px
+        padding-bottom: 26px
+        border-bottom: 4px solid $white
+        display: inline-block
+        transition : border 500ms ease-out
+        line-height: 1
+        &:hover, &:active, &:focus
+          text-decoration: none
+          cursor: pointer
+          border-color: $cue-primary
+        &:hover
+          border-color: $cue-primary-dark
+        &.btn
+          color: $white
+          padding-top: 10px
+          padding-bottom: 10px
+          border: 0
+        &:last-child
+          margin-right: 0
+        @media (max-width: 1023px)
+          margin-right: 20px
+          font-size: 14px
+          padding-top: 29px
+          padding-bottom: 28px
+        @media (max-width: 767px)
+          margin-right: 20px
+          font-size: 14px
+          padding-top: 21px
+          padding-bottom: 20px
+        &.selected
+          border-color: $cue-primary
+        &.cart-link
+          margin-left: 30px
+          margin-right: 0
+          padding-top: 23px
+          padding-bottom: 20px
+          @media (max-width: 1023px)
+            margin-left: 25px
+            padding-bottom: 24px
+          @media (max-width: 767px)
+            padding-top: 17px
+            padding-bottom: 15px
+          i.fa-shopping-cart
+            position: relative
+            font-size: 1.75em
+            &.cue-badge:after
+              content: attr(data-count)
+              position: absolute
+              background: $cue-secondary-dark
+              font-size: 0.7rem
+              font-weight: 700
+              line-height: 1.1rem
+              height: 1.1rem
+              width: 1.1rem
+              top: -0.7rem
+              right: -1rem
+              text-align: center
+              border-radius: 50%
+              color: $white
+      div.menu-icon-span
+        display: none
+        @media (max-width: 991px)
+          margin-left: 30px
+          display: block
+        button.menu-icon
+          line-height: normal
+          background: transparent
+          padding: 0
+          border: 0
+          cursor: pointer
+          position: relative
+          display: inline-block
+          width: 25px
+          height: 20px
+          outline: 0
+          vertical-align: middle
+          color: $cue-primary
+          &:after
+            background: $cue-primary
+            box-shadow: 0 8px 0 $cue-primary,0 16px 0 $cue-primary
+            content: ''
+            position: absolute
+            display: block
+            width: 100%
+            height: 3px
+            top: 0
+            left: 0
+          &:hover
+            background: transparent
+            height: 18px
+            margin-top: 2.5px
+            &:after
+              background: $cue-primary
+              box-shadow: 0 6px 0 $cue-primary,0 12px 0 $cue-primary

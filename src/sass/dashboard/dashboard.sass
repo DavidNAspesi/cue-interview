@@ -1,0 +1,165 @@
+@import mixins
+
+$dashboard-padding: 22px
+$dashboard-mobile-padding: 14px
+
+div.dashboard-wrap
+  background-color: $background-color
+  height: 100vh
+  display: flex
+  padding-top: $header-height
+  overflow: hidden
+  @media (max-width: 991px)
+    div.nav-pane
+      display: none
+  @media (max-width: 767px)
+    padding-top: $header-height-mobile
+  span.action-link
+    color: $cue-secondary-dark
+    font-weight: 500
+    transition: color .25s ease
+    i
+      margin-right: 1em
+    &:hover
+      cursor: pointer
+      color: darken($cue-secondary-dark, 10%)
+  div.row-eq-height
+    display: flex
+    margin-bottom: $dashboard-padding
+    div[class*='col-']:first-child
+      padding-right: $dashboard-padding/2
+    div[class*='col-']:last-child
+      padding-left: $dashboard-padding/2
+    @media (max-width: 767px)
+      margin-bottom: 0
+      display: block
+      div[class*='col-']:first-child
+        padding-right: 15px
+      div[class*='col-']:last-child
+        padding-left: 15px
+  div.dashboard-main
+    padding: $dashboard-padding
+    flex-basis: 100%
+    overflow: auto
+    @media (max-width: 767px)
+      padding: $dashboard-mobile-padding
+    div.dashboard-pane
+      background-color: $white
+      box-shadow: $dark-shadow
+      overflow: auto
+      padding: $dashboard-padding
+      position: relative
+      height: 100%
+      margin-bottom: $dashboard-padding
+      @media (max-width: 991px)
+        margin-bottom: $dashboard-mobile-padding
+      @media (max-width: 767px)
+        padding: $dashboard-mobile-padding
+      &.add-solutions
+        background-color: $background-color
+        padding: 0
+      div.find-products-wrap,
+      div.purchase-wrap
+        width: 100%
+        max-width: none
+      div.purchase-wrap
+        padding: 1em
+        div[class*='col-']:last-child
+          border-left: 2px solid $border-color
+        div.solution-panel
+          border: 0
+      div.receipt-main
+        background-color: $white
+        padding: 2.5em 2em
+        @media (max-width: 1199px)
+          padding: 2em 1.5em
+        @media (max-width: 767px)
+          padding: 1em
+      div.dashboard-header
+        color: $cue-primary
+        font-weight: 500
+        font-size: 1.4em
+        padding-bottom: 12px
+        margin-bottom: 24px
+        border-bottom: 2px solid $cue-primary
+        width: 300px
+      div.multi-tab-header
+        +flex-row
+        justify-content: flex-start
+        cursor: pointer
+        div.dashboard-header
+          color: $medium-gray
+          border-bottom: none
+          margin-right: 1em
+          &.active
+            color: $cue-primary
+            border-bottom: 2px solid $cue-primary
+    div.dashboard-subheader
+      color: $paragraph-color
+      font-weight: 400
+      font-size: 1.3em
+      margin-bottom: 14px
+      .setup-action
+        font-size: 14px
+    div.dash-toggle
+      color: $dark-gray
+      &.show-it
+        margin-top: 2em
+  div.dash-table-wrap
+    margin-top: 1em
+    div.dash-table-row
+      padding: 1em 0
+      border-top: 1px solid $light-gray
+      &.dash-table-header
+        border-top: none
+        padding: 0 0 .5em 0
+        font-weight: 500
+      &.eq-height
+        display: flex
+        align-items: center
+        div.full-height
+          height: 100%
+      img
+        border-radius: 50%
+        width: 50px
+        height: 50px
+  div.subheader-actions
+    margin: 0 0 1em 0
+    padding-bottom: .5em
+    height: 50px
+    +flex-row
+    align-items: flex-end
+    border-bottom: 1px solid $light-gray !important
+    &:first-child
+      margin-top: 0
+    div.dashboard-subheader
+      margin-bottom: 0
+      margin-right: 10px
+      display: inline
+      white-space: nowrap
+    button,
+    a
+      margin: 0 0 0 1em
+      min-width: 100px
+      @media (max-width: 768px)
+        min-width: 75px
+    hr
+      // border-top: 1px solid $dark-gray !important
+      border-top: none
+      width: 100%
+  div.helper-tile
+    padding: 1em
+    margin-top: 1em
+    width: 80%
+    background-color: $lightest-gray
+    @media (max-width: 768px)
+      width: 100%
+    i
+      margin-right: 1em
+div.dashboard-purchase
+  background-color: $background-color
+  padding: 2.5em 2em
+  @media (max-width: 1199px)
+    padding: 2em 1.5em
+  @media (max-width: 767px)
+    padding: 1em

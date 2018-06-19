@@ -1,0 +1,77 @@
+@import mixins
+
+div.modal.menu-modal
+  width: 100%
+  padding-right: 0 !important
+  div.modal-dialog
+    div.modal-content
+      height: 100%
+    div.modal-body
+      background: $white
+      height: auto
+      min-height: 100%
+      padding: 1.5em 2em
+      display: flex
+      flex-flow: column
+      justify-content: space-between
+      @media (max-width: 1023px)
+        padding: 1em
+      div.menu-logo
+        img
+          width: 17%
+          @media (max-width: 767px)
+            width: 33%
+        button.close-button
+          padding: 0
+          cursor: pointer
+          background: none
+          border: 0
+          font-size: 2em
+          line-height: 1
+          float: right
+          outline: 0
+          .glyphicon
+            padding-right: 0
+          &:hover
+            color: $cue-primary
+            text-decoration: none
+      div.menu-items
+        text-align: center
+        @media (max-width: 767px)
+          padding: 2em 0
+      ul
+        margin: 0
+        padding: 0
+        li.menu-item
+          margin-bottom: 2em
+          &:last-child
+            margin-bottom: 0
+          list-style: none
+          a
+            font-size: 2em
+            line-height: normal
+            font-weight: 500
+            text-transform: uppercase
+            @media (max-width: 767px)
+              font-size: 1.5em
+            &:hover
+              text-decoration: none
+              color: $cue-primary
+
+      div.menu-footer
+        div.social-icons
+          text-align: center
+          a
+            margin-right: 16px
+            color: $cue-primary-dark
+            font-size: 24px
+            &:last-child
+              margin-right: 0
+            &:hover
+              text-decoration: none
+              color: $cue-primary-dark
+        div.powered-by
+          text-align: center
+          margin-top: 1em
+          img
+            height: 50px

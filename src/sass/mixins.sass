@@ -1,0 +1,76 @@
+$cue-primary: #326295
+$cue-primary-lite: #7d9bc1
+$cue-primary-dark: #003a70
+$cue-secondary: #ffb549
+$cue-secondary-dark: #ff9e1b
+$cue-tertiary: #888b8d
+$header-height: 109px
+$header-height-mobile: 65px
+$lightest-gray: #F2F2F2
+$light-gray: #e1e1e1
+$medium-gray: #cacaca
+$medium-dark-gray: #999999
+$dark-gray: #3b3f41
+$black: #0a0a0a
+$white: #fefefe
+$border-color: #D5D5D5
+$red: #a94442
+$green: #296d26
+$orange: $cue-secondary
+$yellow: #FFFF00
+$background-color: #f6f6f6
+$min-dash-height: 650px
+$min-signup-height: 500px
+$header-font: "Tiempos Headline", "Times New Roman", Times, serif
+$border-radius-base: 2px
+$light-shadow: 0 2px 1px #aaaaaa
+$dark-shadow: 0 3px 6px #aaaaaa
+$inner-shadow: inset 0 1px 1px #aaaaaa
+$paragraph-color: $dark-gray
+$header-color: $cue-primary-dark
+$link-color: $cue-primary
+$placeholder-color: #d1d1d1
+
+=valign
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+=vhalign
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+
+=width-limit
+  width: 90%
+  margin: 0 auto
+  max-width: 1600px
+  @media (max-width: 1023px)
+    width: 100%
+    margin: 0
+    padding-left: 10px
+    padding-right: 10px
+=keyframes($name)
+  @keyframes #{$name}
+    @content
+
+=flex-col
+  height: 100%
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+=flex-row
+  display: flex
+  justify-content: center
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content

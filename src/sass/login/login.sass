@@ -1,0 +1,70 @@
+@import mixins
+
+div.login-main
+  background-color: $black
+  position: relative
+  padding-top: $header-height + 30px
+  &:after
+    content: ""
+    opacity: 0.8
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    position: absolute
+    background-size: cover
+    background-position: center center
+    background-image: url("/img/dashboard_background_md.jpg")
+  @media (max-width: 767px)
+    padding-top: $header-height-mobile + 15px
+  div.login-pane
+    width: 60%
+    background-color: $white
+    padding: 4em 6em
+    margin: 0 auto 30px
+    min-height: 400px
+    position: relative
+    z-index: 10
+    @media (max-width: 1024px)
+      width: 90%
+      padding: 2em
+    @media (max-width: 767px)
+      margin-bottom: 15px
+    h1.header-text
+      text-align: center
+      padding-bottom: 1em
+      color: $header-color
+    div.header-desc
+      text-align: center
+      color: $paragraph-color
+    div.form-group
+      label
+        font-size: 16px
+        width: 100%
+        a.forgot-password
+          float: right
+          font-size: 0.7em
+          cursor: pointer
+          line-height: 2
+          text-transform: lowercase
+      input.form-control
+        height: 45px
+        border-color: $medium-gray
+    hr
+      margin: 2em 0
+    .btn.btn-cue
+      width: 100%
+      margin-top: 1.5em
+    div.signup-instructs
+      text-align: center
+      a, a:visited, a:focus
+        text-decoration: underline
+    div.loginFailed
+      text-align: center
+      color: #cc0000
+    div.version
+      color: lighten($cue-primary-lite, 15%)
+      font-size: 12px
+      position: absolute
+      bottom: 8px
+      right: 8px

@@ -1,0 +1,62 @@
+@import mixins
+
+div.integrations
+  h3
+    margin-top: 0
+    font-size: 1.2em
+    font-weight: 600
+  h4
+    font-size: 1.1em
+  div.integration-col
+    +flex-col
+    align-items: center
+  div.integration-row
+    +flex-row
+    align-items: center
+    div.body-text
+      margin-left: 2em
+      a.btn, button
+        margin-top: 1em
+  div.integration-footer
+    padding-top: 1em
+    +flex-row
+    align-items: center
+  div.loading-pane
+    min-height: 200px
+    height: 200px
+  div.constant-contact-wrap
+    text-align: center
+    padding: 0.5em
+    a.back-link
+      position: absolute
+      top: 75px
+      left: 35px
+    div.table-header
+      text-align: left
+      margin: 1em .5em .5em .5em
+      font-weight: 500
+    div.body
+      div.table-row
+        text-align: left
+        padding: .5em 0
+        margin: .5em
+        background-color: $background-color
+        transition: box-shadow .25s ease
+        border-radius: 3px
+        &:nth-child(2n)
+          background-color: $light-gray
+        &:hover
+          cursor: pointer
+          box-shadow: $dark-shadow
+    div.grid
+      padding: .5em 2em
+      div.data-cell
+        +flex-col
+        align-items: center
+        padding: 1em
+        &:nth-child(-n + 2)
+          border-bottom: $light-gray solid 1px
+        &:nth-child(2n+1)
+          border-right: $light-gray solid 1px
+        div.figure
+          font-size: 1.4em

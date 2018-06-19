@@ -1,0 +1,326 @@
+div.error-message
+  font-size: 1.3em
+  font-weight: 500
+div.save-buttons
+  text-align: center
+  padding-top: 1em
+  &.left
+    text-align: left
+.glyphicon
+  padding-right: 0.5em
+.btn.btn-save,
+.btn.btn-cue
+  background-color: $cue-secondary-dark
+  padding: 6px 20px
+  font-size: 16px
+  font-weight: 500
+  color: $white
+  transition: background-color .25s ease
+  i
+    font-size: 16px
+    margin-right: 0.5em
+  &.btn-sm
+    font-size: 12px
+    padding: 4px 8px
+  &.btn-lg
+    font-size: 18px
+    padding: 12px 30px
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active:focus
+    color: $white
+    text-decoration: none
+    outline: none
+  &:hover
+    background-color: darken($cue-secondary-dark, 10%)
+  &.primary
+    background-color: $cue-primary
+    &:hover
+      background-color: $cue-primary-dark
+  &.gray
+    background-color: $dark-gray
+    &:hover
+      background-color: darken($dark-gray, 5%)
+  &.white
+    background-color: $white
+    color: $cue-primary-dark
+    border: 1px solid $cue-primary-dark
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active:focus
+      color: $cue-primary
+    &:hover
+      background-color: darken($white, 10%)
+  &.disabled
+    color: #f9f9f9
+    &:hover
+      background-color: #f9f9f9
+  &.reversed
+    color: $cue-secondary-dark
+    border: 1px solid $cue-secondary-dark
+    background-color: $white
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active:focus
+      opacity: .75
+.btn-cancel
+  font-size: 0.95em
+  background-color: transparent
+  border: 0
+  color: $dark-gray
+  cursor: pointer
+  padding: 6px 20px
+  &:hover,
+  &:focus
+    color: $dark-gray
+    text-decoration: underline
+    outline: 0
+a.help-me
+  color: #333
+  text-decoration: underline
+  &:hover
+    color: #333
+.glyphicon.spinning
+  margin-right: 1em
+  padding: 0
+  animation: spin 1.25s infinite linear
+  +keyframes(spin)
+    from
+      transform: scale(1) rotate(0deg)
+    to
+      transform: scale(1) rotate(360deg)
+div.loading-error-pane
+  position: relative
+  min-height: $min-signup-height
+  display: flex
+  flex-flow: column
+  justify-content: center
+  height: 100%
+  text-align: center
+  @media (max-width: 767px)
+    min-height: 50px
+div.loading-pane
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+  min-height: $min-signup-height
+  @media (max-width: 767px)
+    min-height: 50px
+  svg
+    width: 120px
+    height: 120px
+    margin-top: -50px
+div.powered-by
+  display: none
+a.back-text
+  font-weight: 500
+  font-size: 15px
+  line-height: 1.25
+  text-transform: uppercase
+  color: $dark-gray
+  transition: color .25s ease
+  &:hover
+    color: $medium-gray
+    text-decoration: none
+div.squareLogo
+  height: 90px
+  width: 90px
+  min-width: 90px
+  padding: 5px
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 10px
+  border: 1px solid $cue-primary
+  border-radius: $border-radius-base
+  overflow: hidden
+  box-shadow: none
+  transition: box-shadow .25s ease
+  cursor: pointer
+  &.bigger
+    height: 120px
+    width: 120px
+    min-width: 120px
+    padding: 6px
+  &.smaller
+    height: 80px
+    width: 80px
+    min-width: 80px
+    padding: 5px
+  &:hover
+    cursor: pointer
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+  img
+    width: 100%
+  @media (max-width: 767px)
+    width: 65px
+    height: 65px
+    min-width: 65px
+    padding: 4px
+    &.bigger
+      height: 90px
+      width: 90px
+      min-width: 90px
+      padding: 5px
+    &.smaller
+      width: 65px
+      height: 65px
+      min-width: 65px
+      padding: 4px
+div.cue-managed-logo
+  color: $light-gray
+  font-weight: 600
+  font-size: .85em
+  width: auto
+  margin: .25em  0
+  display: inline-block
+  &.active
+    color: $cue-primary
+  i
+    margin-right: .5em
+h1.header-text
+  font-size: 38px
+  line-height: 46px
+  margin: 0
+  font-family: $header-font
+  color: $white
+  max-width: 100%
+  z-index: 1
+  @media (max-width: 1199px)
+    font-size: 36px
+    line-height: 44px
+  @media (max-width: 767px)
+    font-size: 30px
+    line-height: 36px
+div.header-desc
+  font-size: 20px
+  line-height: 24px
+  font-weight: 500
+  padding-top: 18px
+  max-width: 100%
+  z-index: 1
+  color: $white
+  @media (max-width: 1199px)
+    font-size: 18px
+    line-height: 22px
+  @media (max-width: 1023px)
+    font-size: 16px
+    line-height: 20px
+    padding-top: 12px
+div.panel
+  border-radius: $border-radius-base
+  &.panel-default
+    margin-bottom: .5em
+    border-radius: $border-radius-base
+  div.panel-heading
+    border-radius: $border-radius-base
+    border: none
+  div.panel-body
+    border-top: none !important
+    button
+      margin-top: 0.5em
+    label
+      margin-top: 1em
+// i.flyout-icon
+//   color: $cue-primary
+//   margin-top: 0
+//   margin-left: 10px
+//   position: absolute
+//   z-index: 5
+//   cursor: pointer
+//   transition: margin .15s linear, padding .15s linear
+//   &.expanded
+//     clip-path: inset(300px 0 110px 300px)
+//     box-shadow: inset 0px 0px 0px 280px $cue-primary
+//     padding: 310px
+//     margin-left: -300px
+//     margin-top: -310px
+//     border-radius: 50%
+//   div.hidden-text
+//     display: none
+//     position: absolute
+//     margin-left: 70px
+//     color: $white
+//     font-family: "Gotham Rounded SSm A", "Gotham Rounded SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif
+//     &.visible
+//       display: flex
+//       flex-flow: column
+//     i
+//       line-height: 20px
+//       width: 20px
+//     div.hidden-header
+//       font-weight: 500
+//       margin-bottom: 20px
+//       font-size: 16px
+//     div.hidden-feature
+//       margin-left: -40px
+//       font-size: 14px
+//       line-height: 20px
+//       display: flex
+//       a
+//         font-weight: 500
+//         max-width: 200px
+//         margin-top: 20px
+//         text-decoration: none
+//         color: $white
+//         opacity: 1
+//         &:hover
+//           opacity: .75
+div.call-us
+  color: $white
+  font-weight: 500
+  a, a:visited, a:focus
+    color: $white
+    &:hover
+      color: $white
+  &.top-spacing
+    margin-top: 1em
+div.search-wrap
+  display: flex
+  flex-direction: column
+  margin-top: 2.5em
+  &.full-size
+    width: 100%
+  form#search-form
+    width: 100%
+  div.form-group
+    position: relative
+    width: 100%
+    i.glyphicon
+      padding: 0
+      position: absolute
+      top: 8px
+      color: $cue-secondary-dark
+      font-size: 1.1em
+      &.glyphicon-search
+        left: 2px
+      &.glyphicon-remove-circle
+        right: 0px
+    input
+      background-color: rgba(0, 0, 0, 0)
+      border: none
+      border-bottom: $cue-secondary-dark solid 3px
+      box-shadow: none
+      padding: 0.25em 0.25em 0.25em 1.5em
+      font-size: 1.1em
+      color: $white
+      width: 100%
+      @media (max-width: 480px)
+        font-size: 1em
+      &::placeholder
+        color: $white
+        font-size: 1em
+        font-style: normal
+    &.gray-text
+      input
+        color: $dark-gray
+        &::placeholder
+          color: $medium-gray
+.green
+  color: $green
+.red
+  color: $red

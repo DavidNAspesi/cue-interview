@@ -1,0 +1,48 @@
+@import mixins
+
+div.nav-pane
+  background-color: $white
+  position: relative
+  top: 0
+  bottom: 0
+  box-shadow: $dark-shadow
+  width: 150px
+  @media (max-width: 1199px)
+    width: 125px
+  ul
+    list-style: none
+    padding-left: 0
+    li
+      a.dash-nav-btn
+        +flex-col
+        justify-content: center
+        color: $cue-primary
+        font-size: 0.95em
+        border: 2px solid $white
+        height: 100px
+        width: 100%
+        text-align: left
+        transition: background-color .2s ease, border-color .2s ease
+        &:hover
+          background-color: $light-gray
+          border-color: $light-gray
+          text-decoration: none
+        @media (max-width: 1199px)
+          font-size: 0.9em
+          padding: 10px
+          height: 75px
+        i
+          margin: .5em
+          font-size: 1.4em
+      &.current
+        a.dash-nav-btn
+          color: $white
+          font-weight: 500
+          background-color: $cue-primary
+          border-color: $cue-primary
+      &.back
+        padding-top: 30px
+  div.powered-by
+    padding: 10px 15px
+    img
+      height: 30px

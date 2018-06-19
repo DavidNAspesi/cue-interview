@@ -1,0 +1,82 @@
+@import mixins
+
+div.footer
+  padding: 2em 0
+  background-color: $cue-primary
+  color: $white
+  font-size: 14px
+  line-height: 22px
+  z-index: 10
+  position: relative
+  @media (max-width: 767px)
+    padding: 2em
+  div.footer-wrap
+    +width-limit
+    padding: 0 1em
+    @media (max-width: 767px)
+      padding: 0
+    div.footer-image
+      img
+        height: 35px
+    div.footer-selections
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      padding-bottom: 28px
+      border-bottom: 1px solid $white
+      div.footer-section
+        width: 20%
+        &:first-child
+          width: 35%
+        @media (max-width: 767px)
+          width: 40%
+          padding: 0 2em
+          &:first-child
+            text-align: center
+            padding-bottom: 16px
+            width: 100%
+        a
+          color: $white
+          font-weight: 500
+          &:visited
+            color: $white
+        div.footer-header
+          font-size: 18px
+          font-weight: bold
+        div.footer-text
+          font-weight: 500
+          margin: 20px 0
+          p
+            margin-bottom: 3px
+          @media (max-width: 767px)
+            margin: 14px 0
+        ul
+          padding: 0
+          margin: 0
+          list-style: none
+          li
+            margin-top: 8px
+            @media (max-width: 767px)
+              margin-top: 6px
+            list-style: none
+            a
+              color: $white
+              font-weight: 500
+              &:visited
+                color: $white
+    div.copyright-line
+      text-align: center
+      margin: 28px 0 0
+      color: $white
+      font-size: 14px
+      font-weight: 500
+      span.copyright
+        padding: 0 1em
+        white-space: nowrap
+        @media (max-width: 767px)
+          padding: 0 0.5em
+      a
+        color: $white
+        padding: 0 1em
+        @media (max-width: 767px)
+          padding: 0 0.5em
