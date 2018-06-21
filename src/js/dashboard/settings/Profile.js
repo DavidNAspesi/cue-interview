@@ -51,10 +51,13 @@ export default class extends React.Component {
     return this.state.profileData.find(elem => {return elem.key === key}).value
   }
 
-  updateCompany() {
-    const {newProfile} = this.state
-    this.setState({newProfile})
+  updateCompany(e) {
+    e.preventDefault();
+    console.log(this.refs)
+    const {profileData} = this.state;
+    this.setState({profileData})
     this.setState({showUpdateForm:false})
+    // console.log(this.state)
   }
 
   render() {
@@ -72,7 +75,7 @@ export default class extends React.Component {
               showUpdateForm ?
                 <div class="side-by-side">
                   <button class="btn btn-cancel" onClick={()=> {this.setState({showUpdateForm:false})}}>Cancel</button>
-                  <button id="submit-profile" class="btn btn-save" type="submit" onClick={this.updateCompany}>
+                  <button id="submit-profile" class="btn btn-save" type="submit" onClick={this.updateCompany.bind(this)}>
                     Save
                   </button>
                 </div>
