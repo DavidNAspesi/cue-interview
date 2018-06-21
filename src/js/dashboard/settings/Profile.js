@@ -53,11 +53,11 @@ export default class extends React.Component {
 
   updateCompany(e) {
     e.preventDefault();
-    console.log(this.refs)
-    const {profileData} = this.state;
-    this.setState({profileData})
-    this.setState({showUpdateForm:false})
-    // console.log(this.state)
+    const {newProfile} = this.state;
+    this.setState({newProfile})
+    if (e.type === "click") {
+      this.setState({showUpdateForm:false})
+    }
   }
 
   render() {

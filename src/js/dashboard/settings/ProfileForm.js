@@ -35,12 +35,13 @@ export default class ProfileForm extends React.Component {
 
   render() {
     const {profileData, handleChange} = this.props
+    console.log(profileData)
     return (
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" onChange={this.props.updateCompany.bind(this)}>
           {this.getFormFields(profileData.slice(0, 3), handleChange)}
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" onChange={this.props.updateCompany.bind(this)}>
           {this.getFormFields(profileData.slice(3), handleChange)}
         </div>
         <br />
