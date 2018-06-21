@@ -52,7 +52,7 @@ export default class extends React.Component {
   }
 
   updateCompany() {
-    const newProfile = this.state
+    const {newProfile} = this.state
     this.setState({newProfile})
     this.setState({showUpdateForm:false})
   }

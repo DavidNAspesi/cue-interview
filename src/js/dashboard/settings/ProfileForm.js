@@ -6,7 +6,6 @@ export default class ProfileForm extends React.Component {
   componentDidMount() {
     $('#profile-form').validator().on('submit', (e) => {
       e.preventDefault();
-      
     });
   }
 
