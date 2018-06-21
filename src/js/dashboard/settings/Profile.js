@@ -52,7 +52,9 @@ export default class extends React.Component {
   }
 
   updateCompany() {
-    console.log(this.state)
+    const newProfile = this.state
+    this.setState({newProfile})
+    this.setState({showUpdateForm:false})
   }
 
   render() {
@@ -70,7 +72,7 @@ export default class extends React.Component {
               showUpdateForm ?
                 <div class="side-by-side">
                   <button class="btn btn-cancel" onClick={()=> {this.setState({showUpdateForm:false})}}>Cancel</button>
-                  <button id="submit-profile" class="btn btn-save" type="submit" onClick={()=> {this.setState({showUpdateForm:false})}}>
+                  <button id="submit-profile" class="btn btn-save" type="submit" onClick={this.updateCompany}>
                     Save
                   </button>
                 </div>
