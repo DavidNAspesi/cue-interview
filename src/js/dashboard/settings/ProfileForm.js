@@ -1,5 +1,6 @@
 import React from "react";
 import IndustryDropdown from "shared/IndustryDropdown";
+import { ENGINE_METHOD_DIGESTS } from "constants";
 
 export default class ProfileForm extends React.Component {
 
@@ -35,13 +36,13 @@ export default class ProfileForm extends React.Component {
 
   render() {
     const {profileData, handleChange} = this.props
-    console.log(profileData)
+    const updateCompany = this.props.updateCompany
     return (
       <div class="row">
-        <div class="col-sm-6" onChange={this.props.updateCompany.bind(this)}>
+        <div class="col-sm-6" onChange={() => updateCompany(profileData)}>
           {this.getFormFields(profileData.slice(0, 3), handleChange)}
         </div>
-        <div class="col-sm-6" onChange={this.props.updateCompany.bind(this)}>
+        <div class="col-sm-6" onChange={() => updateCompany(profileData)}>
           {this.getFormFields(profileData.slice(3), handleChange)}
         </div>
         <br />

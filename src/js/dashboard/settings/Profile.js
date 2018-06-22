@@ -51,18 +51,20 @@ export default class extends React.Component {
     return this.state.profileData.find(elem => {return elem.key === key}).value
   }
 
-  updateCompany(e) {
-    e.preventDefault();
-    const {newProfile} = this.state;
-    this.setState({newProfile})
-    if (e.type === "click") {
+  updateCompany(newProfile) {
+    if (Array.isArray(newProfile)) {
+      this.setState({profileData: newProfile})
+      // console.log(newProfile)
+    } else {
       this.setState({showUpdateForm:false})
+      // console.log(this.state)
     }
   }
 
   render() {
     const {profileData, showUpdateForm, companyLoading} = this.state,
           {user} = this.props;
+
     return (
       <div class="profile-wrap">
         <form role="form" data-toggle="validator" id="profile-form" class="profile">
@@ -87,8 +89,8 @@ export default class extends React.Component {
           {
             showUpdateForm ?
                 <ProfileForm
-                  profileData={profileData} handleChange={this.handleChange}
-                  updateCompany={this.updateCompany}
+                  profileData={this.state.profileData} handleChange={this.handleChange}
+                  updateCompany={this.updateCompany.bind(this)}
                   />
               :
                 <ProfileData profileData={profileData}/>
